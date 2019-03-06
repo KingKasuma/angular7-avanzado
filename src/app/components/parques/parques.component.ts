@@ -1,10 +1,10 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
     selector: 'parques',
     templateUrl: './parques.component.html'
 })
-export class ParquesComponent{
+export class ParquesComponent implements OnChanges, OnInit, OnDestroy{
   @Input() nombre: string;
   @Input('metros_cuadrados') metros: number;
   public vegetacion: string;
@@ -26,6 +26,19 @@ export class ParquesComponent{
       'vegetacion': this.vegetacion,
       'abierto': this.abierto
     });
+  }
+
+  ngOnChanges(changes: SimpleChanges){
+    // console.log(changes);
+    console.log("Existen cambios en las propiedades");
+  }
+
+  ngOnInit(){
+    console.log("Metodo on init lanzado");
+  }
+
+  ngOnDestroy(){
+    console.log('Se va a eliminar el componente');
   }
 
 }
