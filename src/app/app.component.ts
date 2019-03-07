@@ -6,7 +6,7 @@ import { Component, DoCheck, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements DoCheck, OnInit{
-  title = 'Curso de angular 7 avanzado';
+  title = 'NGZOO';
   emailContacto: string;
 
   ngOnInit(){
